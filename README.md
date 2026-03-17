@@ -1,7 +1,7 @@
 # House Burguer Grill
 
 Projeto front-end de uma hamburgueria, feito com HTML, CSS e JavaScript puro.
-O foco e ser simples, organizado e facil de entender para estudo (nivel 3o/4o periodo).
+O foco e ser simples, organizado e facil de entender para estudo/pratica.
 
 ## Contexto do projeto
 
