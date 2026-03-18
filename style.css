@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -133,14 +137,74 @@ ul {
   flex-wrap: wrap;
 }
 
-.nav a {
+.nav a,
+.nav .nav-cart-btn {
   color: var(--muted);
   font-weight: 500;
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
   transition: color 0.25s ease;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav .nav-cart-btn:hover {
   color: var(--gold);
+}
+
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.header-cart-btn {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--gold);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.header-cart-btn:hover {
+  border-color: rgba(246, 190, 59, 0.5);
+  background: rgba(246, 190, 59, 0.1);
+}
+
+.header-cart-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.header-cart-count {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #181818;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.28rem;
 }
 
 /* =========================
@@ -396,6 +460,84 @@ ul {
   gap: 0.6rem;
 }
 
+/* =========================
+   Cart Drawer
+========================= */
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.46);
+  display: none;
+  z-index: 1190;
+}
+
+.cart-backdrop.active {
+  display: block;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: min(400px, 100%);
+  height: 100vh;
+  z-index: 1200;
+  border-left: 1px solid var(--border);
+  background: linear-gradient(160deg, rgba(18, 18, 18, 0.98), rgba(11, 11, 11, 0.98));
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 0.8rem;
+  transition: right 0.3s ease;
+}
+
+.cart-drawer.active {
+  right: 0;
+}
+
+.cart-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-drawer-header h3 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  font-size: 1.7rem;
+}
+
+.drawer-close-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.drawer-close-btn:hover {
+  color: var(--gold);
+  border-color: rgba(246, 190, 59, 0.45);
+}
+
+.cart-drawer .cart-items {
+  margin-bottom: 0;
+  overflow-y: auto;
+  max-height: 52vh;
+  padding-right: 0.25rem;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .cart-item {
   display: flex;
   align-items: center;
@@ -629,6 +771,13 @@ ul {
   stroke-width: 2;
 }
 
+.phone-contact-link {
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  font-weight: 600;
+}
+
 .copyright {
   text-align: center;
   padding: 0.95rem 0 1.4rem;
@@ -669,7 +818,7 @@ ul {
     row-gap: 0.55rem;
   }
 
-  .header .btn-primary {
+  .header-actions {
     justify-self: center;
   }
 
@@ -722,6 +871,26 @@ ul {
   }
 
   .checkout-actions .btn {
+    width: 100%;
+  }
+
+  .cart-drawer {
+    width: 100%;
+    right: -100%;
+    border-left: 0;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header-actions .btn-primary {
+    width: 100%;
+  }
+
+  .cart-drawer .cart-actions .btn {
     width: 100%;
   }
 

@@ -20,7 +20,7 @@
   <!-- Cabecalho com logo, menu e chamada para acao -->
   <header class="header" id="topo">
     <div class="container header-content">
-      <a class="logo" href="#topo" aria-label="Ir para o topo">
+      <a class="logo" href="#inicio" aria-label="Ir para o inicio">
         <span class="logo-icon" aria-hidden="true">
           <svg class="logo-house-icon" viewBox="0 0 24 24">
             <path d="M3 10.5L12 3l9 7.5"></path>
@@ -40,12 +40,22 @@
       <nav class="nav" id="nav-menu" aria-label="Menu principal">
         <a href="#inicio">Inicio</a>
         <a href="#cardapio">Cardapio</a>
-        <a href="#pedidos">Pedidos</a>
+        <button class="nav-cart-btn" id="open-cart-from-nav" type="button">Pedidos</button>
         <a href="#localizacao">Localizacao</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <a class="btn btn-primary" href="#cardapio">Pedir agora</a>
+      <div class="header-actions">
+        <button class="header-cart-btn" id="toggle-cart" type="button" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2 10h10l2-7H7"></path>
+            <circle cx="10" cy="19" r="1.5"></circle>
+            <circle cx="17" cy="19" r="1.5"></circle>
+          </svg>
+          <span class="header-cart-count" id="cart-count-badge">0</span>
+        </button>
+        <a class="btn btn-primary" href="#cardapio">Pedir agora</a>
+      </div>
     </div>
   </header>
 
@@ -57,7 +67,7 @@
         <p class="hero-tag">Sabor artesanal em cada mordida</p>
         <h1>Seu burguer favorito no clima urbano da noite</h1>
         <p>
-          Pao tostado na medida, carne suculenta e combinacoes criativas para deixar sua noite mais
+          Pão tostado na medida, carne suculenta e combinaçõess criativas para deixar sua noite mais
           gostosa.
         </p>
         <div class="hero-actions">
@@ -399,32 +409,6 @@
       </div>
     </section>
 
-    <!-- Secao do carrinho -->
-    <section class="cart section" id="pedidos">
-      <div class="container cart-content">
-        <div class="section-title">
-          <p class="section-tag">Seu pedido</p>
-          <h2>Carrinho</h2>
-        </div>
-
-        <div class="cart-box">
-          <ul id="cart-items" class="cart-items" aria-live="polite">
-            <li class="empty-cart">Seu carrinho esta vazio.</li>
-          </ul>
-
-          <div class="cart-summary">
-            <p>Itens: <span id="cart-count">0</span></p>
-            <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
-          </div>
-
-          <div class="cart-actions">
-            <button class="btn btn-outline" id="clear-cart">Limpar carrinho</button>
-            <button class="btn btn-primary" id="open-checkout" type="button">Concluir pedido</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Secao de localizacao -->
     <section class="location section" id="localizacao">
       <div class="container location-content">
@@ -451,6 +435,29 @@
       </div>
     </section>
   </main>
+
+  <!-- Carrinho lateral -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="pedidos" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h3>Seu carrinho</h3>
+      <button class="drawer-close-btn" id="close-cart" type="button" aria-label="Fechar carrinho">X</button>
+    </div>
+
+    <ul id="cart-items" class="cart-items" aria-live="polite">
+      <li class="empty-cart">Seu carrinho esta vazio.</li>
+    </ul>
+
+    <div class="cart-summary">
+      <p>Itens: <span id="cart-count">0</span></p>
+      <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
+    </div>
+
+    <div class="cart-actions">
+      <button class="btn btn-outline" id="clear-cart" type="button">Limpar carrinho</button>
+      <button class="btn btn-primary" id="open-checkout" type="button">Finalizar pedido</button>
+    </div>
+  </aside>
 
   <!-- Rodape -->
   <footer class="footer" id="contato">
@@ -481,6 +488,14 @@
                 <circle cx="12" cy="12" r="4.2"></circle>
                 <circle cx="17.2" cy="6.8" r="1"></circle>
               </svg>
+            </a>
+          </li>
+          <li>
+            <a class="phone-contact-link" href="tel:+5581989543788" aria-label="Telefone para contato">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.7 3.5h3.1l1.4 3.5-1.9 1.9a16 16 0 0 0 6 6l1.9-1.9 3.5 1.4v3.1c0 .6-.4 1-1 1C10.2 19.5 4.5 13.8 4.5 6.5c0-.6.4-1 1-1z"></path>
+              </svg>
+              <span>(81) 98954-3788</span>
             </a>
           </li>
         </ul>
