@@ -1,0 +1,18 @@
+{
+  "name": "house-burguer-grill",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site estÃ¡tico da House Burguer Grill com checkout e envio para WhatsApp.",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier \"*.{html,css,js,json,md}\" --write",
+    "format:check": "prettier \"*.{html,css,js,json,md}\" --check"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3"
+  }
+}
+
+

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="House Burguer Grill - hamburgueria artesanal com sabor marcante e ambiente noturno."
+    content="House Burguer Grill - sabor artesanal marcante em um ambiente noturno acolhedor."
   />
   <title>House Burguer Grill</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,10 +17,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Cabecalho com logo, menu e chamada para acao -->
+  <div class="brand-watermark" aria-hidden="true">
+    <img
+      class="brand-watermark-image"
+      src="assets/images/houseBurguerAlberto.png"
+      alt=""
+      decoding="async"
+    />
+  </div>
+
+  <!-- Cabe&ccedil;alho com logo, menu e chamada para a&ccedil;&atilde;o -->
   <header class="header" id="topo">
     <div class="container header-content">
-      <a class="logo" href="#inicio" aria-label="Ir para o inicio">
+      <a class="logo" href="#inicio" aria-label="Ir para o in&iacute;cio">
         <span class="logo-icon" aria-hidden="true">
           <svg class="logo-house-icon" viewBox="0 0 24 24">
             <path d="M3 10.5L12 3l9 7.5"></path>
@@ -38,10 +47,10 @@
       </button>
 
       <nav class="nav" id="nav-menu" aria-label="Menu principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#cardapio">Cardapio</a>
+        <a href="#inicio">In&iacute;cio</a>
+        <a href="#cardapio">Card&aacute;pio</a>
         <button class="nav-cart-btn" id="open-cart-from-nav" type="button">Pedidos</button>
-        <a href="#localizacao">Localizacao</a>
+        <a href="#localizacao">Localiza&ccedil;&atilde;o</a>
         <a href="#contato">Contato</a>
       </nav>
 
@@ -60,29 +69,29 @@
   </header>
 
   <main>
-    <!-- Secao principal -->
+    <!-- Se&ccedil;&atilde;o principal -->
     <section class="hero" id="inicio">
       <div class="overlay"></div>
       <div class="container hero-content">
         <p class="hero-tag">Sabor artesanal em cada mordida</p>
         <h1>Seu burguer favorito no clima urbano da noite</h1>
         <p>
-          Pão tostado na medida, carne suculenta e combinaçõess criativas para deixar sua noite mais
+          P&atilde;o tostado na medida, carne suculenta e combina&ccedil;&otilde;es criativas para deixar sua noite mais
           gostosa.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#cardapio">Ver cardapio</a>
+          <a class="btn btn-primary" href="#cardapio">Ver card&aacute;pio</a>
           <a class="btn btn-outline" href="#localizacao">Como chegar</a>
         </div>
       </div>
     </section>
 
-    <!-- Secao de cardapio -->
+    <!-- Se&ccedil;&atilde;o de cardapio -->
     <section class="menu section" id="cardapio">
       <div class="container">
         <div class="section-title">
-          <p class="section-tag">Cardapio</p>
-          <h2>Cardapio completo da House Burguer Grill</h2>
+          <p class="section-tag">Card&aacute;pio</p>
+          <h2>Card&aacute;pio completo da House Burguer Grill</h2>
         </div>
 
         <div class="menu-category-block">
@@ -90,77 +99,77 @@
           <div class="menu-grid">
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Classic Burger</h3>
-                <p>Hamburguer artesanal 100g, queijo mussarela, alface, tomate e maionese da casa.</p>
+                <h3>Classic Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo mussarela, alface, tomate e maionese da casa.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 17,00</strong>
-                  <button class="btn btn-add" data-name="Classic Burger" data-price="17.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Classic Burguer" data-price="17.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Bacon Burger</h3>
-                <p>Hamburguer artesanal 100g, bacon crocante, queijo mussarela, cebola caramelizada e molho barbecue.</p>
+                <h3>Bacon Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, bacon crocante, queijo mussarela, cebola caramelizada e molho barbecue.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 19,00</strong>
-                  <button class="btn btn-add" data-name="Bacon Burger" data-price="19.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Bacon Burguer" data-price="19.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Burger da casa</h3>
-                <p>Hamburguer artesanal 100g, creme cheese, queijo coalho, cebola caramelizada e tomate.</p>
+                <h3>Burguer da Casa</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, cream cheese, queijo coalho, cebola caramelizada e tomate.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 15,00</strong>
-                  <button class="btn btn-add" data-name="Burger da casa" data-price="15.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Burguer da Casa" data-price="15.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Explosao Burger</h3>
-                <p>Hamburguer artesanal 100g, queijo coalho, presunto, calabresa, ovo e cebola caramelizada.</p>
+                <h3>Explos&atilde;o Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo coalho, presunto, calabresa, ovo e cebola caramelizada.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 25,00</strong>
-                  <button class="btn btn-add" data-name="Explosao Burger" data-price="25.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Explos&atilde;o Burguer" data-price="25.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Duplo Burger</h3>
-                <p>Dois hamburgueres artesanais 100g, queijo cheddar cremoso e molho grill.</p>
+                <h3>Duplo Burguer</h3>
+                <p>Dois hamb&uacute;rgueres artesanais 100g, queijo cheddar cremoso e molho grill.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 18,00</strong>
-                  <button class="btn btn-add" data-name="Duplo Burger" data-price="18.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Duplo Burguer" data-price="18.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Cheddar Burger</h3>
-                <p>Hamburguer artesanal 100g, queijo cheddar, bacon crocante e cebola caramelizada.</p>
+                <h3>Cheddar Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo cheddar, bacon crocante e cebola caramelizada.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 20,00</strong>
-                  <button class="btn btn-add" data-name="Cheddar Burger" data-price="20.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Cheddar Burguer" data-price="20.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Cupim Burger</h3>
-                <p>Hamburguer, cupim desfiado, queijo cheddar, bacon, cebola caramelizada e alface.</p>
+                <h3>Cupim Burguer</h3>
+                <p>Hamb&uacute;rguer, cupim desfiado, queijo cheddar, bacon, cebola caramelizada e alface.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 28,00</strong>
-                  <button class="btn btn-add" data-name="Cupim Burger" data-price="28.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Cupim Burguer" data-price="28.00">Adicionar</button>
                 </div>
               </div>
             </article>
@@ -168,7 +177,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Cupim Tradicional</h3>
-                <p>Hamburguer artesanal 100g, cupim desfiado, queijo mussarela, cebola caramelizada e tomate.</p>
+                <p>Hamb&uacute;rguer artesanal 100g, cupim desfiado, queijo mussarela, cebola caramelizada e tomate.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 25,00</strong>
                   <button class="btn btn-add" data-name="Cupim Tradicional" data-price="25.00">Adicionar</button>
@@ -178,11 +187,11 @@
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Explosao de Queijo</h3>
-                <p>Hamburguer artesanal 100g, queijo mussarela, cheddar e creme cheese.</p>
+                <h3>Explos&atilde;o de Queijo</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo mussarela, cheddar e cream cheese.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 13,00</strong>
-                  <button class="btn btn-add" data-name="Explosao de Queijo" data-price="13.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Explos&atilde;o de Queijo" data-price="13.00">Adicionar</button>
                 </div>
               </div>
             </article>
@@ -194,22 +203,22 @@
           <div class="menu-grid">
              <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Frango Burger</h3>
+                <h3>Frango Burguer</h3>
                 <p>Frango desfiado, batata palha, molho barbecue, cenoura, queijo mussarela e alface.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 18,00</strong>
-                  <button class="btn btn-add" data-name="Frango Burger" data-price="18.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Frango Burguer" data-price="18.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Tradicional carpina</h3>
-                <p>Hamburguer industrializado, queijo mussarela, alface, cebola e tomate.</p>
+                <h3>Tradicional Carpina</h3>
+                <p>Hamb&uacute;rguer industrializado, queijo mussarela, alface, cebola e tomate.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 8,00</strong>
-                  <button class="btn btn-add" data-name="Tradicional carpina" data-price="8.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Tradicional Carpina" data-price="8.00">Adicionar</button>
                 </div>
               </div>
             </article>
@@ -217,7 +226,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Bolso Feliz Premium</h3>
-                <p>Hamburguer industrializado, queijo mussarela e molho da casa.</p>
+                <p>Hamb&uacute;rguer industrializado, queijo mussarela e molho da casa.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 8,00</strong>
                   <button class="btn btn-add" data-name="Bolso Feliz Premium" data-price="8.00">Adicionar</button>
@@ -227,22 +236,22 @@
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Chicken Burger</h3>
-                <p>Empanado de frango, creme cheese, cebola, alface e tomate.</p>
+                <h3>Chicken Burguer</h3>
+                <p>Empanado de frango, cream cheese, cebola, alface e tomate.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 8,00</strong>
-                  <button class="btn btn-add" data-name="Chicken Burger" data-price="8.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Chicken Burguer" data-price="8.00">Adicionar</button>
                 </div>
               </div>
             </article>
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Tradicional Burger</h3>
-                <p>Hamburguer industrializado, queijo mussarela, ovo, presunto, cebola e tomate.</p>
+                <h3>Tradicional Burguer</h3>
+                <p>Hamb&uacute;rguer industrializado, queijo mussarela, ovo, presunto, cebola e tomate.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 10,00</strong>
-                  <button class="btn btn-add" data-name="Tradicional Burger" data-price="10.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="Tradicional Burguer" data-price="10.00">Adicionar</button>
                 </div>
               </div>
             </article>
@@ -250,7 +259,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Caseirinho</h3>
-                <p>Pao de caixa, queijo mussarela, presunto, ovo, alface, cebola e tomate.</p>
+                <p>P&atilde;o de caixa, queijo mussarela, presunto, ovo, alface, cebola e tomate.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 10,00</strong>
                   <button class="btn btn-add" data-name="Caseirinho" data-price="10.00">Adicionar</button>
@@ -261,7 +270,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Cachorro-quente</h3>
-                <p>Salsicha, carne moida, milho verde, ervilha, tomate, cebola e batata palha.</p>
+                <p>Salsicha, carne mo&iacute;da, milho verde, ervilha, tomate, cebola e batata palha.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 8,00</strong>
                   <button class="btn btn-add" data-name="Cachorro-quente" data-price="8.00">Adicionar</button>
@@ -287,11 +296,11 @@
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Agua Mineral</h3>
-                <p>Agua mineral sem gas.</p>
+                <h3>&Aacute;gua Mineral</h3>
+                <p>&Aacute;gua mineral sem g&aacute;s.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 3,00</strong>
-                  <button class="btn btn-add" data-name="Agua Mineral" data-price="3.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="&Aacute;gua Mineral" data-price="3.00">Adicionar</button>
                 </div>
               </div>
             </article>
@@ -299,7 +308,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Suco (jarra)</h3>
-                <p>Sabores: caja, acerola ou graviola.</p>
+                <p>Sabores: caj&aacute;, acerola ou graviola.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 15,00</strong>
                   <button class="btn btn-add" data-name="Suco (jarra)" data-price="15.00">Adicionar</button>
@@ -326,7 +335,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Batata Frita (P)</h3>
-                <p>Porcao pequena de batata frita crocante.</p>
+                <p>Por&ccedil;&atilde;o pequena de batata frita crocante.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 8,00</strong>
                   <button class="btn btn-add" data-name="Batata Frita (P)" data-price="8.00">Adicionar</button>
@@ -337,7 +346,7 @@
             <article class="menu-card">
               <div class="menu-card-body">
                 <h3>Batata Frita (G)</h3>
-                <p>Porcao grande de batata frita crocante.</p>
+                <p>Por&ccedil;&atilde;o grande de batata frita crocante.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 12,00</strong>
                   <button class="btn btn-add" data-name="Batata Frita (G)" data-price="12.00">Adicionar</button>
@@ -358,11 +367,11 @@
 
             <article class="menu-card">
               <div class="menu-card-body">
-                <h3>Aneis de cebola</h3>
-                <p>Porcao de aneis de cebola empanados.</p>
+                <h3>An&eacute;is de cebola</h3>
+                <p>Por&ccedil;&atilde;o de an&eacute;is de cebola empanados.</p>
                 <div class="menu-card-footer">
                   <strong>R$ 8,00</strong>
-                  <button class="btn btn-add" data-name="Aneis de cebola" data-price="8.00">Adicionar</button>
+                  <button class="btn btn-add" data-name="An&eacute;is de cebola" data-price="8.00">Adicionar</button>
                 </div>
               </div>
             </article>
@@ -409,7 +418,7 @@
       </div>
     </section>
 
-    <!-- Secao de localizacao -->
+    <!-- Se&ccedil;&atilde;o de localiza&ccedil;&atilde;o -->
     <section class="location section" id="localizacao">
       <div class="container location-content">
         <div>
@@ -418,13 +427,13 @@
             <h2>Visite a House Burguer Grill</h2>
           </div>
           <p>
-            Avenida Padre Rocha, 539 - São José, Carpina - PE
+            Avenida Padre Rocha, 539 - S&atilde;o Jos&eacute;, Carpina - PE
             <br />
             Ambiente aconchegante, luz quente e muito sabor para sua noite.
           </p>
         </div>
 
-        <div class="map-wrapper" aria-label="Mapa de localizacao da hamburgueria">
+        <div class="map-wrapper" aria-label="Mapa de localiza&ccedil;&atilde;o da hamburgueria">
           <iframe
             title="Mapa House Burguer Grill"
             src="https://www.google.com/maps?q=-7.841414656516435,-35.25344552269752&z=17&output=embed"
@@ -445,8 +454,18 @@
     </div>
 
     <ul id="cart-items" class="cart-items" aria-live="polite">
-      <li class="empty-cart">Seu carrinho esta vazio.</li>
+      <li class="empty-cart">Seu carrinho est&aacute; vazio.</li>
     </ul>
+
+    <div class="order-note-box">
+      <label for="order-note">Observa&ccedil;&otilde;es do pedido</label>
+      <textarea
+        id="order-note"
+        maxlength="200"
+        placeholder="Ex.: Sem cebola, dois sach&ecirc;s de maionese."
+      ></textarea>
+      <p class="order-note-counter"><span id="order-note-count">0</span>/200</p>
+    </div>
 
     <div class="cart-summary">
       <p>Itens: <span id="cart-count">0</span></p>
@@ -459,17 +478,17 @@
     </div>
   </aside>
 
-  <!-- Rodape -->
+  <!-- Rodap&eacute; -->
   <footer class="footer" id="contato">
     <div class="container footer-content">
       <div>
         <h3>House Burguer Grill</h3>
-        <p>Avenida Padre Rocha, 539 - São José, Carpina - PE</p>
+        <p>Avenida Padre Rocha, 539 - S&atilde;o Jos&eacute;, Carpina - PE</p>
       </div>
 
       <div>
-        <h4>Horario de funcionamento</h4>
-        <p>Seg a Sex: 18h as 00h</p>
+        <h4>Hor&aacute;rio de funcionamento</h4>
+        <p>Ter a Dom: 17h &agrave;s 22h</p>
       </div>
 
       <div>
@@ -502,7 +521,7 @@
       </div>
     </div>
 
-    <p class="copyright">&copy; 2026 House Burguer Grill. Todos os direitos reservados.</p>
+    <p class="copyright">&copy; 2026 Danillo Martins. Todos os direitos reservados.</p>
   </footer>
 
   <!-- Popup de checkout -->
@@ -520,12 +539,12 @@
           </label>
 
           <label class="delivery-field">
-            Endereco:
+            Endere&ccedil;o:
             <input type="text" id="customer-address" />
           </label>
 
           <label class="delivery-field">
-            Numero da casa:
+            N&uacute;mero da casa:
             <input type="text" id="customer-house-number" />
           </label>
 
@@ -546,7 +565,7 @@
         </div>
 
         <fieldset class="form-fieldset">
-          <legend>Pedido sera:</legend>
+          <legend>Pedido ser&aacute;:</legend>
           <label class="radio-line">
             <input type="radio" name="delivery-type" value="Retirada" checked />
             Retirada
@@ -557,6 +576,10 @@
           </label>
         </fieldset>
 
+        <div class="delivery-observation" id="delivery-observation" hidden>
+          Entregas ser&atilde;o acertadas com o entregador.
+        </div>
+
         <div id="payment-section">
           <fieldset class="form-fieldset">
             <legend>Forma de pagamento:</legend>
@@ -565,8 +588,8 @@
               PIX
             </label>
             <label class="radio-line">
-              <input type="radio" name="payment-method" value="Cartao de credito" />
-              Cartao de credito
+              <input type="radio" name="payment-method" value="Cart&atilde;o de cr&eacute;dito" />
+              Cart&atilde;o de cr&eacute;dito
             </label>
             <label class="radio-line">
               <input type="radio" name="payment-method" value="Dinheiro" />
@@ -575,7 +598,7 @@
           </fieldset>
 
           <div class="cash-change-box" id="cash-change-box" hidden>
-            <p><strong>Necessario troco?</strong></p>
+            <p><strong>Necess&aacute;rio troco?</strong></p>
             <label class="radio-line">
               <input type="checkbox" id="need-change" />
               Sim, preciso de troco
@@ -598,3 +621,11 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
