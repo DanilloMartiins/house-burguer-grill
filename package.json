@@ -2,17 +2,25 @@
   "name": "house-burguer-grill",
   "version": "1.0.0",
   "private": true,
-  "description": "Site estÃ¡tico da House Burguer Grill com checkout e envio para WhatsApp.",
+  "type": "module",
+  "description": "Aplicação React da House Burguer Grill com cardápio, carrinho e checkout via WhatsApp.",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier \"*.{html,css,js,json,md}\" --write",
-    "format:check": "prettier \"*.{html,css,js,json,md}\" --check"
+    "format": "prettier \"**/*.{html,css,js,jsx,json,md}\" --write",
+    "format:check": "prettier \"**/*.{html,css,js,jsx,json,md}\" --check"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^8.57.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "vite": "^7.1.7"
   }
 }
-
-
