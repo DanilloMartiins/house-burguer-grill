@@ -373,7 +373,7 @@ function showAddButtonFeedback(button) {
 
 function setupTapFeedback() {
   const interactiveSelector =
-    '.btn, .nav a, .nav-cart-btn, .header-cart-btn, .drawer-close-btn, .modal-close-btn, .menu-toggle';
+    '.btn, .nav a, .cart, .drawer-close-btn, .modal-close-btn';
 
   document.addEventListener('click', (event) => {
     const interactiveElement = event.target.closest(interactiveSelector);

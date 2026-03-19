@@ -26,7 +26,6 @@
     />
   </div>
 
-  <!-- Cabe&ccedil;alho com logo, menu e chamada para a&ccedil;&atilde;o -->
   <header class="header" id="topo">
     <div class="container header-content">
       <a class="logo" href="#inicio" aria-label="Ir para o in&iacute;cio">
@@ -37,34 +36,30 @@
             <path d="M10 21v-6h4v6"></path>
           </svg>
         </span>
-        <span class="logo-text">House Burguer Grill</span>
+        <span class="house">HOUSE</span>
+        <span class="burguer">BURGUER</span>
+        <span class="grill">GRILL</span>
       </a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="status is-closed" data-store-status aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="status-label">Fechado agora</span>
+      </div>
 
-      <nav class="nav" id="nav-menu" aria-label="Menu principal">
-        <a href="#inicio">In&iacute;cio</a>
-        <a href="#cardapio">Card&aacute;pio</a>
-        <button class="nav-cart-btn" id="open-cart-from-nav" type="button">Pedidos</button>
-        <a href="#localizacao">Localiza&ccedil;&atilde;o</a>
-        <a href="#contato">Contato</a>
+      <nav class="menu nav" id="nav-menu" aria-label="Menu principal">
+        <a href="#inicio">IN&Iacute;CIO</a>
+        <a href="sobre.html">SOBRE N&Oacute;S</a>
+        <a href="#contato">CONTATO</a>
       </nav>
 
-      <div class="header-actions">
-        <button class="header-cart-btn" id="toggle-cart" type="button" aria-label="Abrir carrinho">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 4h2l2 10h10l2-7H7"></path>
-            <circle cx="10" cy="19" r="1.5"></circle>
-            <circle cx="17" cy="19" r="1.5"></circle>
-          </svg>
-          <span class="header-cart-count" id="cart-count-badge">0</span>
-        </button>
-        <a class="btn btn-primary" href="#cardapio">Pedir agora</a>
-      </div>
+      <button class="cart" id="toggle-cart" type="button" aria-label="Abrir carrinho">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h2l2 10h10l2-7H7"></path>
+          <circle cx="10" cy="19" r="1.5"></circle>
+          <circle cx="17" cy="19" r="1.5"></circle>
+        </svg>
+        <span class="badge" id="cart-count-badge">0</span>
+      </button>
     </div>
   </header>
 
@@ -618,6 +613,7 @@
     </div>
   </div>
 
+  <script src="status.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
