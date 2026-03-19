@@ -4,7 +4,7 @@ import { FoodIllustration } from '../menu/FoodIllustration.jsx';
 
 const FEATURED_ITEMS = MENU_CATEGORIES[0].items.slice(0, 3);
 
-export function HeroSection({ onSelectItem }) {
+export function HeroSection({ onSelectItem, scheduleLabel, storeStatus }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = FEATURED_ITEMS[activeIndex];
 
@@ -15,6 +15,10 @@ export function HeroSection({ onSelectItem }) {
         <div className="hero-announcement">
           <span className="hero-announcement-dot"></span>
           <span>Burgers artesanais montados na hora e pedido fechado em poucos toques</span>
+        </div>
+        <div className={`hero-status-badge${storeStatus.isOpenNow ? ' is-open' : ' is-closed'}`}>
+          <strong>{storeStatus.statusLabel}</strong>
+          <span>{storeStatus.detailLabel}</span>
         </div>
         <p className="hero-tag">Chapa quente, queijo derretendo e muito sabor</p>
         <h1>Seu hambúrguer da noite está aqui, alto, suculento e com cara de vício</h1>
@@ -30,6 +34,7 @@ export function HeroSection({ onSelectItem }) {
             Onde estamos
           </a>
         </div>
+        <p className="hero-schedule-note">{scheduleLabel}</p>
 
         <div className="hero-proof-grid">
           <article className="hero-proof-card">

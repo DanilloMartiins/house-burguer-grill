@@ -1,4 +1,4 @@
-export function Footer({ phoneNumber, phoneLabel }) {
+export function Footer({ phoneNumber, phoneLabel, scheduleLabel, storeStatus, lastOrder }) {
   return (
     <footer className="footer" id="contato">
       <div className="container footer-content">
@@ -9,7 +9,10 @@ export function Footer({ phoneNumber, phoneLabel }) {
 
         <div>
           <h4>Horário de funcionamento</h4>
-          <p>Ter a Dom: 17h às 22h</p>
+          <p>{scheduleLabel}</p>
+          <p className={`footer-status${storeStatus.isOpenNow ? ' is-open' : ' is-closed'}`}>
+            {storeStatus.statusLabel} • {storeStatus.detailLabel}
+          </p>
         </div>
 
         <div>
@@ -44,6 +47,30 @@ export function Footer({ phoneNumber, phoneLabel }) {
             </li>
           </ul>
         </div>
+
+        {lastOrder ? (
+          <div className="footer-last-order">
+            <h4>Ultimo pedido</h4>
+            <p>{lastOrder.formattedDate}</p>
+            <p>
+              {lastOrder.deliveryType} • {lastOrder.totalItems} {lastOrder.totalItems === 1 ? 'item' : 'itens'}
+            </p>
+            {lastOrder.items.length ? (
+              <ul className="footer-last-order-items">
+                {lastOrder.items.map((item) => (
+                  <li key={item.name}>
+                    <span>{item.quantity}x</span>
+                    <strong>{item.name}</strong>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {lastOrder.orderNote ? (
+              <p className="footer-last-order-note">Obs.: {lastOrder.orderNote}</p>
+            ) : null}
+            <p className="footer-last-order-total">{lastOrder.formattedTotal}</p>
+          </div>
+        ) : null}
       </div>
 
       <p className="copyright">© 2026 Danillo Martins. Todos os direitos reservados.</p>

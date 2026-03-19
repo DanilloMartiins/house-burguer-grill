@@ -2,7 +2,14 @@ import { useEffect, useState } from 'react';
 import { formatCurrency } from '../../utils/currency.js';
 import { FoodIllustration } from './FoodIllustration.jsx';
 
-export function ProductDetailsModal({ item, isAdded, onClose, onAddToCart }) {
+export function ProductDetailsModal({
+  item,
+  isAdded,
+  isOrderingOpen,
+  onClose,
+  onAddToCart,
+  storeStatus,
+}) {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -93,11 +100,19 @@ export function ProductDetailsModal({ item, isAdded, onClose, onAddToCart }) {
           <button
             className={`btn btn-primary product-modal-cta${isAdded ? ' is-added' : ''}`}
             type="button"
+            disabled={!isOrderingOpen}
             onClick={() => onAddToCart(item.name, item.price, quantity)}
           >
-            {isAdded ? 'Adicionar mais' : 'Adicionar'} • {formatCurrency(totalPrice)}
+            {isOrderingOpen
+              ? `${isAdded ? 'Adicionar mais' : 'Adicionar'} • ${formatCurrency(totalPrice)}`
+              : 'Pedidos indisponíveis agora'}
           </button>
         </div>
+        {!isOrderingOpen ? (
+          <p className="product-modal-status-note">
+            {storeStatus.statusLabel}. {storeStatus.detailLabel}.
+          </p>
+        ) : null}
       </section>
     </div>
   );

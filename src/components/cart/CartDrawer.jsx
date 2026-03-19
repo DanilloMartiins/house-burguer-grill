@@ -3,6 +3,7 @@ import { formatCurrency } from '../../utils/currency.js';
 
 export function CartDrawer({
   cart,
+  isOrderingOpen,
   totalItems,
   totalPrice,
   orderNote,
@@ -13,6 +14,7 @@ export function CartDrawer({
   onRemoveOne,
   onClearCart,
   onCheckout,
+  storeStatus,
 }) {
   return (
     <>
@@ -112,10 +114,10 @@ export function CartDrawer({
           <button
             className="btn btn-primary"
             type="button"
-            disabled={totalItems === 0}
+            disabled={totalItems === 0 || !isOrderingOpen}
             onClick={onCheckout}
           >
-            Finalizar pedido
+            {isOrderingOpen ? 'Finalizar pedido' : 'Pedidos indisponíveis agora'}
           </button>
           <button
             className="btn btn-outline"
@@ -126,6 +128,11 @@ export function CartDrawer({
             Limpar carrinho
           </button>
         </div>
+        {!isOrderingOpen ? (
+          <p className="cart-status-note">
+            {storeStatus.statusLabel}. {storeStatus.detailLabel}.
+          </p>
+        ) : null}
       </aside>
     </>
   );
