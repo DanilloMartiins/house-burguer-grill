@@ -7,16 +7,596 @@
       name="description"
       content="House Burguer Grill - sabor artesanal marcante em um ambiente noturno acolhedor."
     />
-    <title>House Burguer Grill</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  </div>
+
+  <header class="header" id="topo">
+    <div class="container header-content">
+      <a class="logo" href="#inicio" aria-label="Ir para o in&iacute;cio">
+        <span class="logo-icon" aria-hidden="true">
+          <svg class="logo-house-icon" viewBox="0 0 24 24">
+            <path d="M3 10.5L12 3l9 7.5"></path>
+            <path d="M5.5 9.8V21h13V9.8"></path>
+            <path d="M10 21v-6h4v6"></path>
+          </svg>
+        </span>
+        <span class="house">HOUSE</span>
+        <span class="burguer">BURGUER</span>
+        <span class="grill">GRILL</span>
+      </a>
+
+      <div class="status is-closed" data-store-status aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="status-label">Fechado agora</span>
+      </div>
+
+      <nav class="menu nav" id="nav-menu" aria-label="Menu principal">
+        <a href="#inicio">IN&Iacute;CIO</a>
+        <a href="sobre.html">SOBRE N&Oacute;S</a>
+        <a href="#contato">CONTATO</a>
+      </nav>
+
+      <button class="cart" id="toggle-cart" type="button" aria-label="Abrir carrinho">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h2l2 10h10l2-7H7"></path>
+          <circle cx="10" cy="19" r="1.5"></circle>
+          <circle cx="17" cy="19" r="1.5"></circle>
+        </svg>
+        <span class="badge" id="cart-count-badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Se&ccedil;&atilde;o principal -->
+    <section class="hero" id="inicio">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <p class="hero-tag">Sabor artesanal em cada mordida</p>
+        <h1>Seu burguer favorito no clima urbano da noite</h1>
+        <p>
+          P&atilde;o tostado na medida, carne suculenta e combina&ccedil;&otilde;es criativas para deixar sua noite mais
+          gostosa.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cardapio">Ver card&aacute;pio</a>
+          <a class="btn btn-outline" href="#localizacao">Como chegar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Se&ccedil;&atilde;o de cardapio -->
+    <section class="menu section" id="cardapio">
+      <div class="container">
+        <div class="section-title">
+          <p class="section-tag">Card&aacute;pio</p>
+          <h2>Card&aacute;pio completo da House Burguer Grill</h2>
+        </div>
+
+        <div class="menu-category-block">
+          <h3 class="menu-category-title">Artesanais</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Classic Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo mussarela, alface, tomate e maionese da casa.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 17,00</strong>
+                  <button class="btn btn-add" data-name="Classic Burguer" data-price="17.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Bacon Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, bacon crocante, queijo mussarela, cebola caramelizada e molho barbecue.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 19,00</strong>
+                  <button class="btn btn-add" data-name="Bacon Burguer" data-price="19.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Burguer da Casa</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, cream cheese, queijo coalho, cebola caramelizada e tomate.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 15,00</strong>
+                  <button class="btn btn-add" data-name="Burguer da Casa" data-price="15.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Explos&atilde;o Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo coalho, presunto, calabresa, ovo e cebola caramelizada.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 25,00</strong>
+                  <button class="btn btn-add" data-name="Explos&atilde;o Burguer" data-price="25.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Duplo Burguer</h3>
+                <p>Dois hamb&uacute;rgueres artesanais 100g, queijo cheddar cremoso e molho grill.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 18,00</strong>
+                  <button class="btn btn-add" data-name="Duplo Burguer" data-price="18.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Cheddar Burguer</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo cheddar, bacon crocante e cebola caramelizada.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 20,00</strong>
+                  <button class="btn btn-add" data-name="Cheddar Burguer" data-price="20.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Cupim Burguer</h3>
+                <p>Hamb&uacute;rguer, cupim desfiado, queijo cheddar, bacon, cebola caramelizada e alface.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 28,00</strong>
+                  <button class="btn btn-add" data-name="Cupim Burguer" data-price="28.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Cupim Tradicional</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, cupim desfiado, queijo mussarela, cebola caramelizada e tomate.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 25,00</strong>
+                  <button class="btn btn-add" data-name="Cupim Tradicional" data-price="25.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Explos&atilde;o de Queijo</h3>
+                <p>Hamb&uacute;rguer artesanal 100g, queijo mussarela, cheddar e cream cheese.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 13,00</strong>
+                  <button class="btn btn-add" data-name="Explos&atilde;o de Queijo" data-price="13.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category-block">
+          <h3 class="menu-category-title">Tradicionais e Lanches</h3>
+          <div class="menu-grid">
+             <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Frango Burguer</h3>
+                <p>Frango desfiado, batata palha, molho barbecue, cenoura, queijo mussarela e alface.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 18,00</strong>
+                  <button class="btn btn-add" data-name="Frango Burguer" data-price="18.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Tradicional Carpina</h3>
+                <p>Hamb&uacute;rguer industrializado, queijo mussarela, alface, cebola e tomate.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 8,00</strong>
+                  <button class="btn btn-add" data-name="Tradicional Carpina" data-price="8.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Bolso Feliz Premium</h3>
+                <p>Hamb&uacute;rguer industrializado, queijo mussarela e molho da casa.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 8,00</strong>
+                  <button class="btn btn-add" data-name="Bolso Feliz Premium" data-price="8.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Chicken Burguer</h3>
+                <p>Empanado de frango, cream cheese, cebola, alface e tomate.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 8,00</strong>
+                  <button class="btn btn-add" data-name="Chicken Burguer" data-price="8.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Tradicional Burguer</h3>
+                <p>Hamb&uacute;rguer industrializado, queijo mussarela, ovo, presunto, cebola e tomate.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 10,00</strong>
+                  <button class="btn btn-add" data-name="Tradicional Burguer" data-price="10.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Caseirinho</h3>
+                <p>P&atilde;o de caixa, queijo mussarela, presunto, ovo, alface, cebola e tomate.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 10,00</strong>
+                  <button class="btn btn-add" data-name="Caseirinho" data-price="10.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Cachorro-quente</h3>
+                <p>Salsicha, carne mo&iacute;da, milho verde, ervilha, tomate, cebola e batata palha.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 8,00</strong>
+                  <button class="btn btn-add" data-name="Cachorro-quente" data-price="8.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category-block">
+          <h3 class="menu-category-title">Bebidas</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Refrigerante lata</h3>
+                <p>Bebida gelada em lata.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 6,00</strong>
+                  <button class="btn btn-add" data-name="Refrigerante lata" data-price="6.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>&Aacute;gua Mineral</h3>
+                <p>&Aacute;gua mineral sem g&aacute;s.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 3,00</strong>
+                  <button class="btn btn-add" data-name="&Aacute;gua Mineral" data-price="3.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Suco (jarra)</h3>
+                <p>Sabores: caj&aacute;, acerola ou graviola.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 15,00</strong>
+                  <button class="btn btn-add" data-name="Suco (jarra)" data-price="15.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Suco copo 300ml</h3>
+                <p>Suco natural em copo de 300ml.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 4,00</strong>
+                  <button class="btn btn-add" data-name="Suco copo 300ml" data-price="4.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category-block">
+          <h3 class="menu-category-title">Acompanhamentos</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Batata Frita (P)</h3>
+                <p>Por&ccedil;&atilde;o pequena de batata frita crocante.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 8,00</strong>
+                  <button class="btn btn-add" data-name="Batata Frita (P)" data-price="8.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Batata Frita (G)</h3>
+                <p>Por&ccedil;&atilde;o grande de batata frita crocante.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 12,00</strong>
+                  <button class="btn btn-add" data-name="Batata Frita (G)" data-price="12.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Batata cheddar e bacon</h3>
+                <p>Batata frita coberta com cheddar e bacon.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 15,00</strong>
+                  <button class="btn btn-add" data-name="Batata cheddar e bacon" data-price="15.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>An&eacute;is de cebola</h3>
+                <p>Por&ccedil;&atilde;o de an&eacute;is de cebola empanados.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 8,00</strong>
+                  <button class="btn btn-add" data-name="An&eacute;is de cebola" data-price="8.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category-block">
+          <h3 class="menu-category-title">Adicionais</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Batata Palha</h3>
+                <p>Adicional para seu pedido.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 2,00</strong>
+                  <button class="btn btn-add" data-name="Batata Palha" data-price="2.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Ovo</h3>
+                <p>Adicional para seu pedido.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 2,00</strong>
+                  <button class="btn btn-add" data-name="Ovo" data-price="2.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-card-body">
+                <h3>Cebola empanada</h3>
+                <p>Adicional para seu pedido.</p>
+                <div class="menu-card-footer">
+                  <strong>R$ 3,00</strong>
+                  <button class="btn btn-add" data-name="Cebola empanada" data-price="3.00">Adicionar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Se&ccedil;&atilde;o de localiza&ccedil;&atilde;o -->
+    <section class="location section" id="localizacao">
+      <div class="container location-content">
+        <div>
+          <div class="section-title">
+            <p class="section-tag">Onde estamos</p>
+            <h2>Visite a House Burguer Grill</h2>
+          </div>
+          <p>
+            Avenida Padre Rocha, 539 - S&atilde;o Jos&eacute;, Carpina - PE
+            <br />
+            Ambiente aconchegante, luz quente e muito sabor para sua noite.
+          </p>
+        </div>
+
+        <div class="map-wrapper" aria-label="Mapa de localiza&ccedil;&atilde;o da hamburgueria">
+          <iframe
+            title="Mapa House Burguer Grill"
+            src="https://www.google.com/maps?q=-7.841414656516435,-35.25344552269752&z=17&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Carrinho lateral -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="pedidos" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h3>Seu carrinho</h3>
+      <button class="drawer-close-btn" id="close-cart" type="button" aria-label="Fechar carrinho">X</button>
+    </div>
+
+    <ul id="cart-items" class="cart-items" aria-live="polite">
+      <li class="empty-cart">Seu carrinho est&aacute; vazio.</li>
+    </ul>
+
+    <div class="order-note-box">
+      <label for="order-note">Observa&ccedil;&otilde;es do pedido</label>
+      <textarea
+        id="order-note"
+        maxlength="200"
+        placeholder="Ex.: Sem cebola, dois sach&ecirc;s de maionese."
+      ></textarea>
+      <p class="order-note-counter"><span id="order-note-count">0</span>/200</p>
+    </div>
+
+    <div class="cart-summary">
+      <p>Itens: <span id="cart-count">0</span></p>
+      <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
+    </div>
+
+    <div class="cart-actions">
+      <button class="btn btn-outline" id="clear-cart" type="button">Limpar carrinho</button>
+      <button class="btn btn-primary" id="open-checkout" type="button">Finalizar pedido</button>
+    </div>
+  </aside>
+
+  <!-- Rodap&eacute; -->
+  <footer class="footer" id="contato">
+    <div class="container footer-content">
+      <div>
+        <h3>House Burguer Grill</h3>
+        <p>Avenida Padre Rocha, 539 - S&atilde;o Jos&eacute;, Carpina - PE</p>
+      </div>
+
+      <div>
+        <h4>Hor&aacute;rio de funcionamento</h4>
+        <p>Ter a Dom: 17h &agrave;s 22h</p>
+      </div>
+
+      <div>
+        <h4>Redes sociais</h4>
+        <ul class="social-list">
+          <li>
+            <a
+              class="social-icon-link"
+              href="https://www.instagram.com/house_burguer_grill?igsh=cXZ1YmhhbGt3Y3hr"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.2" cy="6.8" r="1"></circle>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="phone-contact-link" href="tel:+5581989543788" aria-label="Telefone para contato">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.7 3.5h3.1l1.4 3.5-1.9 1.9a16 16 0 0 0 6 6l1.9-1.9 3.5 1.4v3.1c0 .6-.4 1-1 1C10.2 19.5 4.5 13.8 4.5 6.5c0-.6.4-1 1-1z"></path>
+              </svg>
+              <span>(81) 98954-3788</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Danillo Martins. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Popup de checkout -->
+  <div class="checkout-modal" id="checkout-modal" aria-hidden="true">
+    <div class="checkout-modal-card" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="modal-close-btn" id="close-checkout" type="button" aria-label="Fechar popup">X</button>
+
+      <h3 id="checkout-title">Finalizar pedido</h3>
+
+      <form class="checkout-form" id="checkout-form">
+        <div class="form-grid">
+          <label>
+            Nome:
+            <input type="text" id="customer-name" required />
+          </label>
+
+          <label class="delivery-field">
+            Endere&ccedil;o:
+            <input type="text" id="customer-address" />
+          </label>
+
+          <label class="delivery-field">
+            N&uacute;mero da casa:
+            <input type="text" id="customer-house-number" />
+          </label>
+
+          <label class="delivery-field">
+            Complemento:
+            <input type="text" id="customer-complement" />
+          </label>
+
+          <label class="delivery-field">
+            Bairro:
+            <input type="text" id="customer-neighborhood" />
+          </label>
+
+          <label>
+            Telefone:
+            <input type="tel" id="customer-phone" required />
+          </label>
+        </div>
+
+        <fieldset class="form-fieldset">
+          <legend>Pedido ser&aacute;:</legend>
+          <label class="radio-line">
+            <input type="radio" name="delivery-type" value="Retirada" checked />
+            Retirada
+          </label>
+          <label class="radio-line">
+            <input type="radio" name="delivery-type" value="Entrega" />
+            Entrega
+          </label>
+        </fieldset>
+
+        <div class="delivery-observation" id="delivery-observation" hidden>
+          Entregas ser&atilde;o acertadas com o entregador.
+        </div>
+
+        <div id="payment-section">
+          <fieldset class="form-fieldset">
+            <legend>Forma de pagamento:</legend>
+            <label class="radio-line">
+              <input type="radio" name="payment-method" value="PIX" checked />
+              PIX
+            </label>
+            <label class="radio-line">
+              <input type="radio" name="payment-method" value="Cart&atilde;o de cr&eacute;dito" />
+              Cart&atilde;o de cr&eacute;dito
+            </label>
+            <label class="radio-line">
+              <input type="radio" name="payment-method" value="Dinheiro" />
+              Dinheiro
+            </label>
+          </fieldset>
+
+          <div class="cash-change-box" id="cash-change-box" hidden>
+            <p><strong>Necess&aacute;rio troco?</strong></p>
+            <label class="radio-line">
+              <input type="checkbox" id="need-change" />
+              Sim, preciso de troco
+            </label>
+            <label>
+              Troco para quanto:
+              <input type="number" id="change-value" min="0" step="0.01" placeholder="Ex: 50,00" disabled />
+            </label>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <button class="btn btn-outline" id="cancel-checkout" type="button">Cancelar</button>
+          <button class="btn btn-primary" type="submit">Enviar pedido no WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="status.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
 </html>
