@@ -1,4 +1,6 @@
 export function Footer({ phoneNumber, phoneLabel, scheduleLabel, storeStatus, lastOrder }) {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer" id="contato">
       <div className="container footer-content">
@@ -73,7 +75,23 @@ export function Footer({ phoneNumber, phoneLabel, scheduleLabel, storeStatus, la
         ) : null}
       </div>
 
-      <p className="copyright">© 2026 Danillo Martins. Todos os direitos reservados.</p>
+      <div className="container footer-bottom">
+        <p className="footer-legal">
+          {`\u00A9 ${currentYear} House Burguer Grill todos os direitos reservados`}
+        </p>
+        <p className="footer-credit">
+          
+          <a
+            className="footer-credit-link"
+            href="https://www.linkedin.com/in/danillomartins/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir LinkedIn de Danillo Martins"
+          >
+            Desenvolvido por Danillo Martins
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }
