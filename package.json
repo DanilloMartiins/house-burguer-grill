@@ -6,7 +6,12 @@
   "description": "Aplicação React da House Burguer Grill com cardápio, carrinho e checkout via WhatsApp.",
   "scripts": {
     "dev": "vite",
+    "dev:react": "vite",
+    "dev:angular": "npm --prefix frontend-angular start",
+    "install:angular": "npm --prefix frontend-angular install",
     "build": "vite build",
+    "build:react": "vite build",
+    "build:angular": "npm --prefix frontend-angular run build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

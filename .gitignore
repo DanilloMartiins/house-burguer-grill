@@ -2,3 +2,6 @@
 prompt.md
 Prompt.md
 node_modules/
+dist/
+frontend-angular/node_modules/
+frontend-angular/dist/

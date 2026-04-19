@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-main: #0e1018;
+  --bg-alt: #161b2b;
+  --surface: #121622;
+  --surface-strong: #0d111d;
+  --text-main: #f7f8ff;
+  --text-muted: #c3cae5;
+  --accent: #f9bd44;
+  --accent-dark: #ba5b22;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Barlow', 'Segoe UI', Tahoma, sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 20% -5%, rgba(249, 189, 68, 0.2), transparent 48%),
+    radial-gradient(circle at 88% -8%, rgba(186, 91, 34, 0.18), transparent 45%),
+    linear-gradient(180deg, var(--bg-alt) 0%, var(--bg-main) 56%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
