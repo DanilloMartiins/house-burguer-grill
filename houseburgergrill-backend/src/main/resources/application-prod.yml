@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+    placeholders:
+      admin_name: ${ADMIN_NAME}
+      admin_email: ${ADMIN_EMAIL}
+      admin_password: ${ADMIN_PASSWORD}
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      access-token-expiration: ${JWT_ACCESS_EXPIRATION:PT15M}
+      refresh-token-expiration: ${JWT_REFRESH_EXPIRATION:P7D}

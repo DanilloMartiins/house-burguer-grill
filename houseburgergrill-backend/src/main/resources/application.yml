@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: houseburgergrill-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  jackson:
+    time-zone: America/Fortaleza
+
+server:
+  servlet:
+    context-path: /
+  error:
+    include-message: always
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
+  security:
+    jwt:
+      secret: ${JWT_SECRET:houseburgergrill-dev-secret-change-me-please}
+      access-token-expiration: ${JWT_ACCESS_EXPIRATION:PT15M}
+      refresh-token-expiration: ${JWT_REFRESH_EXPIRATION:P7D}
