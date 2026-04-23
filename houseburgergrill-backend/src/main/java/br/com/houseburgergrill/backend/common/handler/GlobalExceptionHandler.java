@@ -1,6 +1,7 @@
 package br.com.houseburgergrill.backend.common.handler;
 
 import br.com.houseburgergrill.backend.common.api.ApiErrorResponse;
+import br.com.houseburgergrill.backend.common.exception.BadRequestException;
 import br.com.houseburgergrill.backend.common.exception.ConflictException;
 import br.com.houseburgergrill.backend.common.exception.NotFoundException;
 import br.com.houseburgergrill.backend.common.exception.UnauthorizedException;
@@ -59,6 +60,11 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 fieldErrors
         );
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ApiErrorResponse> handleBadRequest(BadRequestException ex, HttpServletRequest request) {
+        return buildResponse(HttpStatus.BAD_REQUEST, ex.getMessage(), request.getRequestURI(), null);
     }
 
     @ExceptionHandler(ConflictException.class)
