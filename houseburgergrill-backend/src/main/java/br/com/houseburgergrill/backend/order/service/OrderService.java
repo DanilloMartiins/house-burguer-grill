@@ -87,8 +87,6 @@ public class OrderService {
             total = total.add(subtotal);
         }
 
-        // V1: total apenas com soma dos itens.
-        // Melhoria futura: somar taxa de entrega (delivery_fee) e aplicar descontos/cupons.
         order.setTotalAmount(total);
 
         Order savedOrder = orderRepository.save(order);
@@ -97,12 +95,9 @@ public class OrderService {
 
     @Transactional(readOnly = true)
     public List<OrderResponse> getMyOrders(Long customerId) {
-        List<Order> orders = orderRepository.findByCustomerIdOrderByCreatedAtDesc(customerId);
-        List<OrderResponse> response = new ArrayList<>();
-        for (Order order : orders) {
-            response.add(toResponse(order, true));
-        }
-        return response;
+        return orderRepository.findByCustomerIdOrderByCreatedAtDesc(customerId).stream()
+                .map(order -> toResponse(order, true))
+                .toList();
     }
 
     @Transactional(readOnly = true)
@@ -138,8 +133,6 @@ public class OrderService {
     }
 
     private boolean isValidTransition(OrderStatus currentStatus, OrderStatus nextStatus) {
-        // V1 com fluxo enxuto.
-        // Melhoria futura: incluir estados intermediarios (PREPARING, OUT_FOR_DELIVERY) e regras por perfil.
         if (currentStatus == nextStatus) {
             return true;
         }
@@ -159,18 +152,17 @@ public class OrderService {
                 order.getCustomer().getEmail()
         );
 
-        List<OrderItemResponse> items = new ArrayList<>();
-        if (includeItems) {
-            for (OrderItem item : order.getItems()) {
-                items.add(new OrderItemResponse(
-                        item.getProduct().getId(),
-                        item.getProduct().getName(),
-                        item.getQuantity(),
-                        item.getUnitPrice(),
-                        item.getSubtotal()
-                ));
-            }
-        }
+        List<OrderItemResponse> items = includeItems
+                ? order.getItems().stream()
+                    .map(item -> new OrderItemResponse(
+                            item.getProduct().getId(),
+                            item.getProduct().getName(),
+                            item.getQuantity(),
+                            item.getUnitPrice(),
+                            item.getSubtotal()
+                    ))
+                    .toList()
+                : new ArrayList<>();
 
         return new OrderResponse(
                 order.getId(),

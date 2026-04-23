@@ -75,7 +75,6 @@ public class AuthService {
         RefreshToken currentToken = refreshTokenService.validateActiveToken(rawToken);
         User user = currentToken.getUser();
 
-        // Rotaciona o refresh token para reduzir janela de reutilizacao indevida.
         refreshTokenService.revoke(currentToken);
 
         return issueTokens(user);
